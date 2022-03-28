@@ -1,26 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-const myfirstelement = 
-
-  
-  <>
-  
-  
-  <h1>Hello React!</h1>
-  <h1>Ayam</h1>
-  
-  
-  </>
-  
-  
-  
-  
-  
-  
+import ClassComponent from './ClassComponents'
 
 
-ReactDOM.render(myfirstelement, document.getElementById('root'));
+  
+ReactDOM.render(
+  <React.StrictMode>
+    <ClassComponent />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
 
 
