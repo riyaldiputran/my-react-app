@@ -5,11 +5,11 @@ import ClassChange from './ClassChange'
 import SearchBar from './pages/search/index'
 import FuncState from './FuncState'
 import FuncEffect from './FuncEffect';
-
+import GifApp from './GifApp';
 
 ReactDOM.render(
   <React.StrictMode>
-    <FuncEffect/>
+    <GifApp/>
   </React.StrictMode>,
   document.getElementById('root')
 );
