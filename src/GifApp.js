@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import Gif from "./components/Gif";
 import './GifStyles.css'
-
+import SearchBar from "./components/SearchBar";
 export default function GifApp() {
   const [inputVal, setInputVal] = useState("");
   const [gifData, setGifData] = useState([]);
+ 
 
   useEffect(() => {
     const getData = async () => {
@@ -19,11 +20,20 @@ export default function GifApp() {
     getData();
   }, [inputVal]);
 
+  const handleSearch = (e) => {
+      setInputVal(e.target.value)
+  }
+
+
+
+
+
   return (
     <div className="App">
       <div>
-        <input type="text" onChange={(e) => setInputVal(e.target.value)} />
-        <button type="submit">Search</button>
+
+        <SearchBar handleSearch={handleSearch} />
+        
         {gifData.map((d) => (
           <Gif title={d.title} url={d.images.fixed_width.url} key={d.id} />
         ))}
