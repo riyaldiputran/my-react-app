@@ -1,35 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+
+import './Styles.css'
+import { BrowserRouter as Router,Switch,Route,Redirect } from "react-router-dom";
+import HomePage from './pages/Home';
+import TrendingPage from './pages/trendingPage';
+
+export default function App() {
 
 
-function App() {
+
+
+
   return (
-    <html>
-      <head>
-      <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-      <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-      <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-      </head>
-      <body>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload .
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Belajar React Yok
-          </a>
-        </header>
-      </div>
-      </body>
-    </html>
-  );
+    <Router>
+        <Switch>
+            <Redirect exact from="/" to="home" />
+            <Route path="/trending">
+                <TrendingPage/>
+            </Route>
+            <Route path="/home">
+                <HomePage/>
+            </Route>
+        </Switch>
+    </Router>
+  )
 }
-
-export default App;

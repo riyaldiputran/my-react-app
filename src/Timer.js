@@ -12,6 +12,7 @@ function Timer() {
     return () => clearTimeout(timer)
     },[]);
   
+    // eslint-disable-next-line react/no-unescaped-entities
     return <h1>I've rendered {count} times!</h1>;
   }
 export default Timer;

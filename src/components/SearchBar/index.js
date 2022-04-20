@@ -1,13 +1,12 @@
 import React from 'react';
 
 
-const SearchBar = ({handleSearch,handleClick})=>{
+// eslint-disable-next-line react/prop-types
+const SearchBar = ({handleSearch})=>{
     
     return(
         <div>
-            <input type="text" onChange={handleSearch}/>
-
-            <button type="submit" onClick={handleClick} >Search</button>
+            <input type="text" onChange={handleSearch}/>   
         </div>
     )
 }
